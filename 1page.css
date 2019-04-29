@@ -44,6 +44,7 @@ li {
 .banner {
   color: white;
   height: calc(100vh - 60px);
+  min-height: 500px;
   padding: 20px;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
@@ -94,7 +95,7 @@ input:focus {
   text-align: right;
 }
 
-.avatar {
+.test-avatar {
   height: 100px;
   width: 100px;
   margin-right: 50px;
@@ -107,19 +108,17 @@ input:focus {
   margin: auto;
   padding: 30px 0px;
   max-width: 1000px;
-  display: flex;
-  align-items: center;
-
-  /* display: grid;
+  display: grid;
   justify-items: center;
-  grid-gap: 20px; */
-  /* align-items: center; */
+  grid-gap: 20px;
+  align-items: center;
+  grid-template-columns: repeat(8, 1fr);
 }
 
 .testimonial-text {
   display: flex;
   flex-direction: column;
-  min-width: 500px;
+  grid-column: span 7;
 }
 
 .sign-up-container {
@@ -237,3 +236,43 @@ button:hover {
 .feature-pic {
   object-fit: cover;
 }
+
+ul {
+  list-style-type: none;
+}
+
+#burger-menu {
+  display: none;
+  width: 40px;
+}
+
+.hidden {
+  display: none;
+}
+
+.burger-dropdown {
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 1px 1px 4px grey;
+  padding-right: 30px;
+}
+
+@media only screen and (min-width: 800px) {
+  .burger-dropdown {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+    #burger-menu {
+      display: inline-block;
+    }
+
+    .bar__menu,
+    .test-avatar {
+      display: none;
+    }
+  }
